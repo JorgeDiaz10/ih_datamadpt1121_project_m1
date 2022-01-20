@@ -54,7 +54,7 @@ Once you open the terminal:
 ```
 
 |  Place of interest      |  Place address | Type of place | BiciMAD Station |  Station location  |  Distance  |
-| ----------------------- |:------------- :|:-------------:|:---------------:|:------------------:|-----------:|
+| ----------------------- |:--------------:|:-------------:|:---------------:|:------------------:|-----------:|
 |  Comunidad Cristi...    | CALLE ...      | no_catolicas  | Gutierre de C...| Calle Gutierr...   | 4436.41386 |
 
 ---
