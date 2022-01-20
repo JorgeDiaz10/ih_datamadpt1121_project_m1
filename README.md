@@ -2,17 +2,21 @@
 
 # __ih_datamadpt1121_project_m1__
 
-Ironhack Madrid - Data Analytics Part Time - November 2021 - Project Module 1
-
+Ironhack Madrid - Data Analytics Part Time - Janaury 2022 - Project Module 1
 
 ---
 
 # BiciMad Stations distance to catholic temples or non catholic temples
 
+---
 
 Proeyect 1 is a Python App for checking the distance between the catholic temples or non catholic temples to the closer BiciMAD Station.
 
+---
+
 ## Installation
+
+---
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the libraries.
 
@@ -24,6 +28,8 @@ import os
 from shapely.geometry import Point
 import geopandas as gpd
 ```
+
+---
 
 ## Usage
 
@@ -37,6 +43,16 @@ def min_distance():
 def all_min_stations():
     return merge().sort_values(by = "Distance", ascending = True).groupby('Place of interest')['Type of place','Place address','BiciMAD station', 'Station location','Distance'].nth(0).drop(["Distance"], axis = "columns")
 ```
+
+## Use in Terminal
+
+```python
+Once you open the terminal:
+    1. Activate the appropiate environment. In our case, **conda activate proyecto1**
+    2. Go to the project folder
+    3. Type **python main.py** --tipo CloserStation or AllStations to get a csv file
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
