@@ -57,6 +57,7 @@ Once you open the terminal:
 | ----------------------- |:------------- :|:-------------:|:---------------:|:------------------:|-----------:|
 |  Comunidad Cristi...    | CALLE ...      | no_catolicas  | Gutierre de C...| Calle Gutierr...   | 4436.41386 |
 
+---
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
