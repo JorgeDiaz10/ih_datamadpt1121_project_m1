@@ -8,7 +8,6 @@ Ironhack Madrid - Data Analytics Part Time - Janaury 2022 - Project Module 1
 
 # BiciMad Stations distance to catholic temples or non catholic temples
 
----
 
 Proeyect 1 is a Python App for checking the distance between the catholic temples or non catholic temples to the closer BiciMAD Station.
 
@@ -16,7 +15,6 @@ Proeyect 1 is a Python App for checking the distance between the catholic temple
 
 ## Installation
 
----
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the libraries.
 
@@ -63,6 +61,8 @@ Once you open the terminal:
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.   
+
+---
 
 ## License
 [BICIMAD] (https://www.bicimad.com/)
