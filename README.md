@@ -4,71 +4,50 @@
 
 Ironhack Madrid - Data Analytics Part Time - November 2021 - Project Module 1
 
-## **Data:**
 
-There are 2 main datasources:
+---
 
-- **Azure SQL Database.** The database contains information from the BiciMAD stations including their location (i.e.: latitude / longitude). In order to access the database you may need the following credentials:
+# BiciMad Stations distance to catholic temples or non catholic temples
+
+
+Proeyect 1 is a Python App for checking the distance between the catholic temples or non catholic temples to the closer BiciMAD Station.
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the libraries.
+
+```bash
+import pandas as pd
+import requests
+import numpy as np
+import os
+from shapely.geometry import Point
+import geopandas as gpd
 ```
-Server name:   sqlironhack
-Database:      BiciMAD
+
+## Usage
+
+```python
+def min_distance():
+    x = str(input('Enter the Place of Interest: '))
+    y = merge()[merge()['Place of interest']== x]
+    return y.sort_values(by='Distance', ascending=True).head(1).drop(['City', 'lat_start', 'long_start', 'start', 'geometry_coordinates', 'long_finish', 'lat_finish', 'final'], axis = 1)
+
+
+def all_min_stations():
+    return merge().sort_values(by = "Distance", ascending = True).groupby('Place of interest')['Type of place','Place address','BiciMAD station', 'Station location','Distance'].nth(0).drop(["Distance"], axis = "columns")
 ```
-> __IMPORTANT =>__ Username and password will be provided in class.
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-- **API REST.** We will use the API REST from the [Portal de datos abiertos del Ayuntamiento de Madrid](https://datos.madrid.es/nuevoMadrid/swagger-ui-master-2.2.10/dist/index.html?url=/egobfiles/api.datos.madrid.es.json#/), where you can find the __Catálogo de datos__ with more than 70 datasets.
+Please make sure to update tests as appropriate.
 
-> __IMPORTANT =>__ Specific datasets will be assigned to each student in order to perform the challenges.
-
-
----
-
-## **Main Challenge:**
-
-You must create a Python App (**Data Pipeline**) that allow their potential users to find the nearest BiciMAD station to a set of places of interest. The output table should look similar to:
-
-| Place of interest | Type of place (*) | Place address | BiciMAD station | Station location |
-|---------|----------|-------|------------|----------|
-| Auditorio Carmen Laforet (Ciudad Lineal)   | Centros Culturales | Calle Jazmin, 46 | Legazpi | Calle Bolívar, 3 |
-| Centro Comunitario Casino de la Reina | Centros municipales de enseñanzas artísticas | Calle Casino, 3 | Chamartin | Calle Rodríguez Jaén, 40 |
-| ...     | ...            | ...        | ...      | ...        |
-> __(*)__ There is a list of datasets each one with different places. A specific dataset will be assigned to each student. 
-
-
-**Your project must meet the following requirements:**
-
-- It must be contained in a GitHub repository which includes a README file that explains the aim and content of your code. You may follow the structure suggested [here](https://github.com/potacho/data-project-template).
-
-- It must create, at least, a `.csv` file including the requested table (i.e. Main Challenge). Alternatively, you may create an image, pdf, plot or any other output format that you may find convenient. You may also send your output by e-mail, upload it to a cloud repository, etc. 
-
-- It must provide, at least, two options for the final user to select when executing using `argparse`: **(1)** To get the table for every 'Place of interest' included in the dataset (or a set of them), **(2)** To get the table for a specific 'Place of interest' imputed by the user.
-
-**Additionally:**
-
-- You must prepare a 4 minutes presentation (ppt, canva, etc.) to explain your project (Instructors will provide further details about the content of the presentation).
-
-- The last slide of your presentation must include your candidate for the **'Ironhack Data Code Beauty Pageant'**. 
-
+## License
+[BICIMAD] (https://www.bicimad.com/)
+[Datasets] (https://datos.madrid.es/nuevoMadrid/swagger-ui-master-2.2.10/dist/index.html?url=/egobfiles/api.datos.madrid.es.json#/)
 
 ---
-
-### **Bonus 1:**
-
-You may include in your table the availability of bikes in each station.
-
----
-
-### **Bonus 2:**
-
-You may improve the usability of your app by using [FuzzyWuzzy](https://pypi.org/project/fuzzywuzzy/).
-
----
-
-### **Bonus 3:**
-
-Feel free to enrich your output data with any data you may find relevant (e.g.: wiki info for every place of interest).
-
---- 
 
 ## **Project Main Stack**
 
