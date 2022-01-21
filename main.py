@@ -8,8 +8,11 @@ import os
 from shapely.geometry import Point
 import geopandas as gpd   
 import sys
-
-
+import smtplib, getpass, os
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email.encoders import encode_base64
 
 # Script functions 
 
@@ -17,8 +20,9 @@ import sys
 # Argument parser function
 
 parser = argparse.ArgumentParser()
-parser.add_argument( "--tipo", dest = "tipo", default = "CloserStation", 
-help = "parametro para selecionar el tipo de ejecucion. Posibles valores: MasCercana , TodasEstaciones"
+parser.add_argument( "-t", "--type", dest = "type", default = "CloserStation", 
+help = "Write in the terminal CloserStation to type the Place of interest you want to know its BiciMAD station closer \
+        or AllStations to get the distance of all of the Places of interest to their corresponding BiciMAD station", type=str
 )
 args = parser.parse_args(sys.argv[1:])
 
@@ -86,17 +90,69 @@ print('\n')
 print('\n')
 print('--- Hi everyone!! ---')
 print('\n')
+print('--- Starting app ---')
 print('\n')
 
-if args.tipo == "CloserStation":
+if args.type == "CloserStation":
     ubicacion_mas_cercana = min_distance()
     # print(ubicacion_mas_cercana)
-    ubicacion_mas_cercana.to_csv("data/closer_station.csv", sep= ";")
+    ubicacion_mas_cercana.to_csv("data/closer_station.csv", sep= ";", encoding='utf-8')
     print("Closest station in a CSV file")
-elif args.tipo == "AllStations":
+elif args.type == "AllStations":
     distancias_ubicacion = all_min_stations()
     # print(distancias_ubicacion)
     distancias_ubicacion.to_csv("data/all_locations.csv", sep= ";")
     print("All stations in a CSV file")
 else:
     print("Wrong option, you can only print CloserStation or AllStations")
+
+print("**** Send email with Gmail ****")
+user = input("Gmail account: ")
+password = getpass.getpass("Password: ")
+
+#Email credentials
+remitente = input("From, example: administrador <admin@gmail.com>: ")
+destinatario = input("To, example: amigo <amigo@mail.com>: ")
+asunto = input("Subject: ")
+mensaje = input("HTML message: ")
+archivo = input("Attach file: ")
+
+#Host and SMTP  of Gmail
+gmail = smtplib.SMTP('smtp.gmail.com', 587)
+
+#protocols
+gmail.starttls()
+
+#Credencials
+gmail.login(user, password)
+
+#Depuration 1=true
+gmail.set_debuglevel(1)
+
+header = MIMEMultipart()
+header['Subject'] = asunto
+header['From'] = remitente
+header['To'] = destinatario
+
+mensaje = MIMEText(mensaje, 'html') #Content-type:text/html
+header.attach(mensaje)
+
+if (os.path.isfile(archivo)):
+ adjunto = MIMEBase('application', 'octet-stream')
+ adjunto.set_payload(open(archivo, "rb").read())
+ encode_base64(adjunto)
+ adjunto.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(archivo))
+ header.attach(adjunto)
+
+#Send email
+gmail.sendmail(remitente, destinatario, header.as_string())
+
+#Close conexion SMTP
+gmail.quit()
+
+print('\n')
+print('\n')
+print('--- You can now go to data folder to check your csv file ---')
+print('\n')
+print('--- Finishing app ---')
+print('\n')

@@ -25,6 +25,11 @@ import numpy as np
 import os
 from shapely.geometry import Point
 import geopandas as gpd
+import smtplib, getpass, os
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email.encoders import encode_base64
 ```
 
 ---
@@ -46,10 +51,14 @@ def all_min_stations():
 
 ```python
 Once you open the terminal:
-    1. Activate the appropiate environment. In our case, **conda activate proyecto1**
+    1. Activate the appropiate environment. In our case, conda activate proyecto1
     2. Go to the project folder
-    3. Type **python main.py** --tipo CloserStation or AllStations to get a csv file
+    3. Type python main.py --type / -t CloserStation or AllStations 
+    4. Write your email credentials
+    5. You will get a csv file send by gmail
 ```
+
+Here is an example of what you would get in the csv file:
 
 |  Place of interest      |  Place address | Type of place | BiciMAD Station |  Station location  |  Distance  |
 | ----------------------- |:--------------:|:-------------:|:---------------:|:------------------:|-----------:|
@@ -67,6 +76,7 @@ Please make sure to update tests as appropriate.
 ## License
 [BICIMAD] (https://www.bicimad.com/)
 [Datasets] (https://datos.madrid.es/nuevoMadrid/swagger-ui-master-2.2.10/dist/index.html?url=/egobfiles/api.datos.madrid.es.json#/)
+[Gmail] (https://mail.google.com/mail/u/0/#inbox)
 
 ---
 
@@ -83,6 +93,8 @@ Please make sure to update tests as appropriate.
 - Module `geo_calculations.py`
 
 - [Argparse](https://docs.python.org/3.7/library/argparse.html)
+
+- [smtplib] (https://docs.python.org/3/library/smtplib.html)
 
 
 
