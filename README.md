@@ -74,9 +74,9 @@ Please make sure to update tests as appropriate.
 ---
 
 ## License
-[BICIMAD] (https://www.bicimad.com/)
-[Datasets] (https://datos.madrid.es/nuevoMadrid/swagger-ui-master-2.2.10/dist/index.html?url=/egobfiles/api.datos.madrid.es.json#/)
-[Gmail] (https://mail.google.com/mail/u/0/#inbox)
+[BICIMAD](https://www.bicimad.com/)
+[Datasets](https://datos.madrid.es/nuevoMadrid/swagger-ui-master-2.2.10/dist/index.html?url=/egobfiles/api.datos.madrid.es.json#/)
+[Gmail](https://mail.google.com/mail/u/0/#inbox)
 
 ---
 
