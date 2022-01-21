@@ -9,7 +9,7 @@ Ironhack Madrid - Data Analytics Part Time - Janaury 2022 - Project Module 1
 # BiciMad Stations distance to catholic temples or non catholic temples
 
 
-Proeyect 1 is a Python App for checking the distance between the catholic temples or non catholic temples to the closer BiciMAD Station.
+Proeyect 1 is a Python App for checking the distance between the catholic temples or non catholic temples to the closer BiciMAD Station. The final output is an email with a csv file with the information above.
 
 ---
 
@@ -84,13 +84,13 @@ Please make sure to update tests as appropriate.
 
 - [Azure SQL Database](https://portal.azure.com/)
 
-- [SQL Alchemy](https://docs.sqlalchemy.org/en/13/intro.html) (alternatively you can use _Azure Data Studio_)
+- [Azure Data Studio](https://docs.microsoft.com/es-es/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15) 
 
 - [Requests](https://requests.readthedocs.io/)
 
 - [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
 
-- Module `geo_calculations.py`
+-  Module `geo_calculations.py`
 
 - [Argparse](https://docs.python.org/3.7/library/argparse.html)
 

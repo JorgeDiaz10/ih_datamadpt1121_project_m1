@@ -152,7 +152,7 @@ gmail.quit()
 
 print('\n')
 print('\n')
-print('--- You can now go to data folder to check your csv file ---')
+print('--- You can now go to data folder or your email to check your csv file ---')
 print('\n')
 print('--- Finishing app ---')
 print('\n')
