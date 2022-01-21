@@ -94,7 +94,7 @@ Please make sure to update tests as appropriate.
 
 - [Argparse](https://docs.python.org/3.7/library/argparse.html)
 
-- [smtplib] (https://docs.python.org/3/library/smtplib.html)
+- [smtplib](https://docs.python.org/3/library/smtplib.html)
 
 
 
